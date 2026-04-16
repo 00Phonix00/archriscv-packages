@@ -1,19 +1,11 @@
---- PKGBUILD
-+++ PKGBUILD
-@@ -37,12 +37,16 @@ build() {
-   cargo build \
-     --release \
-     --frozen \
-+    --no-default-features \
-+    --features battery,notify,gix-faster \
-     --manifest-path starship/Cargo.toml
- }
- 
- check() {
-   cargo test \
-     --frozen \
-+    --no-default-features \
-+    --features battery,notify,gix-faster \
-     --manifest-path starship/Cargo.toml
- }
- 
+--- PKGBUILD	2026-04-16 01:57:13.664000000 +0000
++++ PKGBUILD	2026-04-16 02:01:31.296000000 +0000
+@@ -6,7 +6,7 @@
+ pkgdesc='The cross-shell prompt for astronauts'
+ pkgver=1.24.2
+ pkgrel=2
+-arch=(x86_64)
++arch=(x86_64 riscv64)
+ url=https://starship.rs/
+ _url="https://github.com/$pkgname/$pkgname"
+ license=(ISC)
